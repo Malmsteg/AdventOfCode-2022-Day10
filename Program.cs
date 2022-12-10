@@ -9,7 +9,6 @@ for (int i = 0; i < 6; i++)
 }
 
 int maxCycles = 0;
-int lineCount = 0;
 List<int> instructions = new();
 for (int i = 0; i < text.Length; i++)
 {
@@ -31,7 +30,7 @@ int count = 0;
 Dictionary<int, int> result = new();
 for (int cycle = 1; cycle < maxCycles; cycle++)
 {
-    lineCount = (cycle - 1) / 40;
+    int lineCount = (cycle - 1) / 40;
     int pixelPosition = (cycle - 1) % 40;
     if (Math.Abs(pixelPosition - signalStrength) == 1 || pixelPosition == signalStrength)
     {
